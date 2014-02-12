@@ -1,0 +1,53 @@
+/*!
+ * \file version.h
+ *
+ * \brief @pkg_NAME@ package version information.
+ * \warning Auto-generated from version.h.in on @pkg_TIMESTAMP@
+ *
+ * \par Copyright:
+ * \n All Rights Reserved
+ */
+#ifndef _VERSION_H
+#define _VERSION_H
+
+#include "rnr/pkg.h"
+
+/*! \brief package name */
+#define PKG_NAME      "@pkg_NAME@"
+
+/*! \brief package dotted version */
+#define PKG_VERSION   "@pkg_VERSION@"
+
+/*! \brief package build date */
+#define PKG_TIMESTAMP "@pkg_TIMESTAMP@"
+
+/*! \brief package extended creation date */
+#define PKG_DATE      "@pkg_CREATED@"
+
+/*! \brief package full name */
+#define PKG_FULL_NAME "@pkg_FULL_NAME@"
+
+/*! \brief package author(s) */
+#define PKG_AUTHORS   "@pkg_AUTHORS@"
+
+/*! \brief package owner(s) */
+#define PKG_OWNERS    "@pkg_OWNERS@"
+
+/*! \brief package legal disclaimer */
+#define PKG_DISCLAIMER "This is free software; see the source for copying conditions. There is NO\n warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE."
+
+/*! \brief The package */
+static const PkgInfo_T PkgInfo =
+{
+  PKG_NAME,
+  PKG_VERSION,
+  PKG_TIMESTAMP,
+  PKG_DATE,
+  PKG_FULL_NAME,
+  PKG_AUTHORS,
+  PKG_OWNERS,
+  PKG_DISCLAIMER
+};
+
+
+#endif // _VERSION_H

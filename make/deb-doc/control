@@ -1,0 +1,7 @@
+Package:rnr-libserial-doc
+Version: @VERSION@
+Section: devel
+Priority: optional
+Architecture: @ARCH@
+Maintainer: Daniel Packard <daniel@roadnarrows.com>
+Description: Utilities for communicating over serial interface.
