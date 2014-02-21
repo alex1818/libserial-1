@@ -5,13 +5,14 @@ cmake_minimum_required(VERSION 2.8)
 ##
 project(libserial)
 set (pkg_NAME "libserial")
+set(pkg_BRIEF "RoadNarrows serial library.")
 
 set(pkg_VERSION_MAJ 1)
-set(pkg_VERSION_MIN 3)
-set(pkg_VERSION_REV 2)
+set(pkg_VERSION_MIN 4)
+set(pkg_VERSION_REV 0)
 set(pkg_VERSION "${pkg_VERSION_MAJ}.${pkg_VERSION_MIN}.${pkg_VERSION_REV}")
 
-set(pkg_CREATED "2013")
+set(pkg_CREATED "2014")
 execute_process(COMMAND date 
   OUTPUT_VARIABLE pkg_TIMESTAMP 
   OUTPUT_STRIP_TRAILING_WHITESPACE
