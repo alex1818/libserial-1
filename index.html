@@ -17,8 +17,7 @@
       <header>
         <h1 style="margin-left:-8px">
        <a href="http://roadnarrows.com"><img src="http://www.roadnarrows.com/img/navbar/RNLogo.png" width="100px" style="margin-left:-100px; margin-bottom:-70px"></img></a>
-        libserial -
-        <a href="http://roadnarrows.com/distro/" style="padding-left:5px">RN DISTRO<img src="images/go_back_icon.png" width="16px"></img></a>
+        <a href="http://roadnarrows.com/distro/" >RN DISTRO<img src="images/distro_home.png" width="16px" style="margin-left:5px"></img></a>
         </h1>
         <p>RoadNarrows Robotics serial communication library</p>
 
@@ -35,13 +34,30 @@
         <a href="http://colorado.roadnarrows.com:40105/job/libserial/"><img src="http://colorado.roadnarrows.com:40105/buildStatus/icon?job=libserial" alt="Build Status" style="margin-bottom:-2px"></a>
         <a href="http://roadnarrows.com/distro/libserial/pkg/" style="padding-left:20px">ARCHIVE</a>
       </p>
+      SEE ALSO:<br/>
+      <p><a href="http://roadnarrows.com/distro/librnr" style="padding-left:20px">
+        <strong>LIBRNR</strong>
+      </a></p>
+
+      <p>
+        <strong>
+        Visit <a href="http://roadnarrows.com"><strong>RoadNarrows Homepage</strong></a><br/>
+        Visit <a href="http://github.com/roadnarrows-robotics"><strong>RoadNarrows on github</strong></a><br/>
+        Visit <a href="http://roadnarrows-store.com"><strong>RoadNarrows Store</strong></a><br/>
+        </strong>
+      </p>
+
       </header>
       <section>
+      <h1>libserial</h1>
+      <hr/>
 
 <h2><a name="description" class="anchor" href="#description"><span class="octicon octicon-link"></span></a>Description:</h2>
 
-<p><strong><em>libserial</em></strong> provides a robust, generic API for interfacing with serial devices and communication buses.
+<p><strong><em>libserial</em></strong> provides a robust, generic API for interfacing with RS-232 serial devices.</p>
 
+<p><strong>Source documentation: </strong><a href="http://roadnarrows.com/distro/libserial/pkg/latest/srcdoc">libserial-srcdoc</a></p>
+<p><strong>RN Dependencies:</strong> <a href="http://roadnarrows.com/distro/librnr">librnr</a></p>
 <hr>
 
 <h2>
@@ -58,7 +74,6 @@ sudo apt-get update <span class="p">&amp;&amp;</span> sudo apt-get install libse
 <h3>
 <a name="from-source-using-cmake" class="anchor" href="#from-source-using-cmake"><span class="octicon octicon-link"></span></a>From source (using CMake)</h3>
 
-<p>Dependencies: <a href="http://roadnarrows.com/distro/librnr">librnr</a></p>
 
 <div class="highlight highlight-bash"><pre>git clone http://github.com/roadnarrows-robotics/libserial
 <span class="nb">cd </span>libserial
