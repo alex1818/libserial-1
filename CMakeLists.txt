@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8)
 
 ## default architecture
-set(ARCH "x86_64")
+set(ARCH "x86_64" CACHE STRING "Architecture to tell gcc to optimize for (-march)")
 
 ##
 ## Package-wide configuration
@@ -38,6 +38,7 @@ endif($ENV{JENKINS})
 ## roadnarrows development-specific configuration
 if($ENV{RNDEV})
   set(CMAKE_INSTALL_PREFIX "/prj/xinstall/${ARCH}")
+  message(${CMAKE_INSTALL_PREFIX})
   include_directories(BEFORE ${CMAKE_INSTALL_PREFIX}/include)
   link_directories(${CMAKE_INSTALL_PREFIX}/lib/rnr)
 endif($ENV{RNDEV})
