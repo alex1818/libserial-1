@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 2.8)
 
+## default architecture
+set(ARCH "x86_64")
+
 ##
 ## Package-wide configuration
 ##
@@ -12,7 +15,7 @@ set(pkg_VERSION_MIN 4)
 set(pkg_VERSION_REV 0)
 set(pkg_VERSION "${pkg_VERSION_MAJ}.${pkg_VERSION_MIN}.${pkg_VERSION_REV}")
 
-set(pkg_CREATED "2014")
+set(pkg_CREATED "2005")
 execute_process(COMMAND date 
   OUTPUT_VARIABLE pkg_TIMESTAMP 
   OUTPUT_STRIP_TRAILING_WHITESPACE
@@ -23,12 +26,21 @@ set(pkg_AUTHORS "Robin Knight, Kim Wheeler, Daniel Packard")
 set(pkg_OWNERS "RoadNarrows LLC")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DLOG -DLOGMOD='\"libserial\"'")
 
-## configure jenkins
-if(${JENKINS})
-  message("Using Jenkins")
+set(CMAKE_C_FLAGS "-DARCH_${ARCH} -DARCH='\"${ARCH}\"' ${CMAKE_C_FLAGS}")
+
+## jenkins-specific configuration
+if($ENV{JENKINS})
+  set(CMAKE_INSTALL_PREFIX "$ENV{JENKINS_XINSTALL}/${ARCH}")
   include_directories(BEFORE ${CMAKE_INSTALL_PREFIX}/include)
   link_directories(${CMAKE_INSTALL_PREFIX}/lib/rnr)
-endif(${JENKINS})
+endif($ENV{JENKINS})
+
+## roadnarrows development-specific configuration
+if($ENV{RNDEV})
+  set(CMAKE_INSTALL_PREFIX "/prj/xinstall/${ARCH}")
+  include_directories(BEFORE ${CMAKE_INSTALL_PREFIX}/include)
+  link_directories(${CMAKE_INSTALL_PREFIX}/lib/rnr)
+endif($ENV{RNDEV})
 
 ## generate package headers
 configure_file (
